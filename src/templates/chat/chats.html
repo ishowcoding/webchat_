@@ -1,0 +1,100 @@
+{% extends 'chat/base_chat.html' %}ger
+
+<!--Code for Contacts Section-->
+{% block contacts %}
+<div class="contacts-header">
+    <p class="contacts-p" hidden>DISCONNECTED...</p>
+    <div class = image-holder></div>
+    
+    <span>Contacts Section</Section></span>
+    <div class="box"></div>
+    <div class = search-button id ="search-button">
+        <img src = "https://www.downloadclipart.net/medium/search-button-png-hd-photo.png">
+    </div>
+    <div class="btn-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- <span class="visually-hidden">Toggle Dropdown</span> -->
+        <div class ="dropdown-btn">
+            <img src = "https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Dot-More-Vertical-Menu-512.png">
+        </div>
+    </div>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#createGroupModal" data-target="#createGroupModal" data-toggle="modal" id="anchorTagCreateGroup">Create Group</a></li>
+        <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+        <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href={{ url_for('auth.logout') }}>Log out</a></li>
+        </ul>
+   
+</div>
+
+
+<div class="div-search-username" id ="div-search-username">
+    <p>Type in your friend's usename to start chatting:</p>
+    <input type="text" name="search-username" id="search-username" hin>
+</div>
+
+<!--Below this, we should display all existing contacts.
+In the actual application, we should add the existing
+contacts from the database, and dynamically placed here by AJAX-->
+
+<div class="scroll-div-existing-contacts">
+    <!-- <div class="contact">
+        <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="contact_image">
+        <p class="name">Mohsin</p>
+    </div>
+    <div class="contact">
+        <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="contact_image">
+        <p class="name">Adwaith</p>
+    </div>
+    <div class="contact">
+        <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="contact_image">
+        <p class="name">Krishnathejus</p>
+    </div>-->
+    <ul class ="chat-list" id ="chat-list"></ul>
+</div> 
+
+
+{% endblock contacts %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Code for Chats Section-->
+{% block chat %}
+
+<div class="div-chat-name">
+    <div></div>
+    <!-- <img src="../../assets/Group 1.png" alt=""> -->
+    <span class="chat-name-p", id="chat-name-p"></span>
+</div>
+
+<div class="div-chat-window">
+    <ul class ="messages" id ="messages"></ul>
+</div>
+
+<div class="div-message-type">
+
+    <form id="chat-form">
+    
+        <input class="chat-input" type="text" name="text-message" id ="msg_input">
+        <button  class="send_bt" id ="send_bt">Send</button>
+    
+    </form>
+    
+</div>
+
+{% endblock chat %}
+
+
+
